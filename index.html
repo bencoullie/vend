@@ -9,9 +9,10 @@
 
     <!-- As Proxima Nova is a paid font
     which I don't yet have access to
-    I'm opting for it's closest free alternative
-    in my oppinion: Montserrat -->
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    I tried opting for it's closest free alternative
+    in my oppinion: Montserrat. But this didn't
+    have enough font weights so I went for Lato -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/ico" href="favicon.ico">
@@ -22,7 +23,7 @@
 
     <!-- HEADER -->
     <header>
-      <div class="inner-header">
+      <div class="inner-header clearfix">
         <ul>
           <li><a rel="nofollow" href="https://www.vendhq.com/">VendHQ</a></li>
           <li><a rel="nofollow" href="https://secure.vendhq.com/signin">Sign in</a></li>
@@ -31,14 +32,21 @@
           <li><a rel="nofollow" href="https://support.vendhq.com/hc/en-us">Help</a></li>
           <li><a rel="nofollow" href="https://www.vendhq.com/university">Vend U</a></li>
           <li><a rel="nofollow" href="http://blog.vendhq.com">Blog</a></li>
-          <li><a href="#">
+          <!-- There's no title for this or any icon
+          on the vendhq header. I think it's pretty
+          important for explaining the icon -->
+          <li><a href="http://www.vendhq.com/contact" title="Contact">
+            <!-- As I want my svg to be interactive
+            (i.e. be hightlightable on hover like text)
+            and as vendhq uses inline svg
+            I've opted for inline over <img> -->
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 12" enable-background="new 0 0 14 12" xml:space="preserve">
               <g>
                 <path fill="#DFDFDF" d="M14,7V3c0,0,0-3-3-3H3c0,0-3,0-3,3v4c0,0,0,3,3,3h3l5,2l-1-2h1C11,10,14,10,14,7"/>
               </g>
             </svg>
           </a></li>
-          <li><a href="#">
+          <li class="phone-number js-phone-number"><a href="tel:1-844-814-5409" title="Call">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">
               <g>
                 <defs>
@@ -52,8 +60,11 @@
                   C8.9,3.5,8.7,4,9.6,4.9"/>
               </g>
             </svg>
+            <div>
+              1-844-814-5409
+            </div>
           </a></li>
-          <li><a href="#">
+          <li><a href="#" title="Select location">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             	 viewBox="0 0 16 11" enable-background="new 0 0 16 11" xml:space="preserve">
               <g id="Guides_For_Artboard_3_">
@@ -103,10 +114,59 @@
 
     <!-- PRIMARY COLUMN -->
     <div id="main">
+      <section class="as-table">
+        <div class="as-table-cell">
+          <div class="sign-in-container clearfix">
+            <div class="form-container">
+              <div class="center">
+                <div class="sign-in-header-box">
+                  <img src="img/vend-tag-logo.svg" alt="Vendo Logo">
+                  <h1 class="form-header-text">
+                    Sign in
+                  </h1>
+                </div>
+                <div class="form-store-info clearfix">
+                  <div class="sign-in-subheader-text">Indie Home Collective</div>
+                  <div>
+                    <a href="#">Not your store?</a>
+                  </div>
+                </div>
 
+                <form role="form">
+                  <input class="sign-in-input" type="email" required placeholder="Email or username"></input>
+                  <input class="sign-in-input" type="password" required placeholder="Password"></input>
+                  <div class="form-group-submit">
+                    <a href="#">Forgot your Sign In?</a>
+                    <button class="submit-button-green" type="submit">Sign in</button>
+                  </div>
+
+                </form>
+
+              </div>
+            </div>
+            <div class="carousel-container">
+              <div class="center">
+                <span class="sign-in-subheader-text">
+                  New in Vend
+                  <img src="img/arrow-box.svg"/>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="sign-in-sub-text">
+            Don't have an account?
+            <a href="https://secure.vendhq.com/signup" title="Sign Up"> Try Vend for free.</a>
+          </div>
+        </div>
+    </section>
     </div>
 
-    <!-- These scripts check to see if jQuery can be loaded asynchronously. If the google CDN fails it loads the backup local version synchronously instead. I see vend uses jQuery so I've included to to help get my job done faster. -->
+    <!-- These scripts check to see
+    if jQuery can be loaded asynchronously.
+    If the google CDN fails it loads the
+    backup local version synchronously instead.
+    I see vend uses jQuery so I've also included
+    it to help get my job done faster. -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="js/main.js"></script>
