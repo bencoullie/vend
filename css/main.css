@@ -1,28 +1,30 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+/* ==========================================================================
+   HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ pre-styling
+   ========================================================================== */
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 audio,
@@ -31,47 +33,162 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
-
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
 
 /* ==========================================================================
-   Author's custom styles
+   Custom styles (non boilerplate)
    ========================================================================== */
 
+/* Site-wide styling */
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
 
+body * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /*Proxima Nova free alternative*/
+  font-family: 'Montserrat', sans-serif;
+}
 
+body {
+  background-color: #ebebeb;
+}
 
+/* Header styling */
 
+#main, header {
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
+header {
+  background-color: #404040;
+  height: 30px;
+}
 
+/* Using .inner-header as the parent
+to reduce class bloat and keep things
+relatively unspecific for maintainability.
+<header> not used as parent as you can have
+several <header> elements in one document...
+I can try better defend decisions like these
+if you have any questions, so shoot :)*/
+.inner-header {
+  max-width: 1022px;
+  max-width: 63.87rem;
+  padding-left: 1.305rem;
+  padding-right: 1.305rem;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.inner-header ul:first-child {
+  float: left;
+  padding-left: 0;
+}
 
+.inner-header ul {
+  float: right;
+  margin: 0;
+}
 
+.inner-header li {
+  display: inline-block;
+  line-height: 30px;
+  font-size: 11px;
+}
 
+.inner-header a {
+  padding: 0 10px;
+  display: inline-block;
+  color: #f5f5f5;
+  width: 101%;
+  height: 100%;
+  text-decoration: none;
+  /* Normally I'd be using scss
+  and mixins to do this for me so
+  it would be less cluttered */
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
 
+.inner-header a:hover {
+  color: #fff;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
 
+.inner-header svg {
+  display: inline;
+  width: 15px;
+}
+
+/* SVG specific hover css
+(I would normally nestle
+css like this via scss
+for readability and brevity) */
+.inner-header a path {
+  fill: #DFDFDF;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
+
+.inner-header a:hover path {
+  fill: #fff;
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
+}
+
+.inner-header li:last-child svg {
+  width: 18px;
+}
+
+/* Primary column styling */
+
+#main {
+  background: url(../img/background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /*on the fly calculation ensures correct proportions constantly*/
+  height: calc(100vh - 30px);
+}
 
 /* ==========================================================================
-   Media Queries
+   Boilerplate Media Queries
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
@@ -79,120 +196,119 @@ textarea {
 }
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
 }
 
 /* ==========================================================================
-   Helper classes
+   Boilerplate Helper classes
    ========================================================================== */
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
+  display: none !important;
+  visibility: hidden;
 }
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
 }
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .clearfix:before,
 .clearfix:after {
-    content: " ";
-    display: table;
+  content: " ";
+  display: table;
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 .clearfix {
-    *zoom: 1;
+  *zoom: 1;
 }
 
 /* ==========================================================================
-   Print styles
+   Boilerplate Print styles
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    thead {
-        display: table-header-group;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    img {
-        max-width: 100% !important;
-    }
+  img {
+    max-width: 100% !important;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
