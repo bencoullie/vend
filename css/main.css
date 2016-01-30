@@ -386,10 +386,15 @@ if you'd like it changed to non-vertically centered.*/
 .form-group-submit a {
   color: #008cc5;
   text-decoration: none;
+  line-height: 45px;
 }
 
-.form-group-submit button {
-  margin-left: 73px;
+.form-group-submit div:first-child {
+  float: left;
+}
+
+.form-group-submit div:last-child {
+  float: right;
 }
 
 .submit-button-green {
@@ -451,6 +456,71 @@ if you'd like it changed to non-vertically centered.*/
   -moz-transition-duration: .2s;
   -o-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+/* Custom media queries */
+
+/* The design didn't specify an inbetween state
+(i.e. some tablets and larger phones)
+So I just combined the two designs (mobile and desktop)
+and adjusted css values accordingly.
+Paddings and margins are scaled
+but uniform padding is retained */
+@media (max-width: 880px) {
+  .sign-in-container {
+    height: 378px;
+  }
+
+  .sign-in-container .center {
+    height: 100%;
+    padding: 30px 25px;
+    text-align: center;
+  }
+
+  .sign-in-container .form-container, .sign-in-container .carousel-container, .sign-in-container {
+    width: 100%;
+  }
+
+  .sign-in-container .form-container {
+    border-radius: 3px 3px 0 0;
+  }
+
+  .sign-in-container .carousel-container {
+    border-radius: 0 0 3px 3px;
+  }
+
+  .sign-in-container .whats-new-carousel {
+    margin-top: 38px;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+    top: 19px;
+  }
+
+  .whats-new-carousel .unslider-nav {
+    margin-top: 4px;
+  }
+
+  .whats-new-carousel li img {
+    padding-bottom: 10px;
+  }
+
+  .sign-in-sub-text {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    display: none;
+  }
+  #main {
+    height: 100vh;
+  }
+}
+
+@media (max-width: 500px) {
+
 }
 
 /* ==========================================================================
