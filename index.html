@@ -133,13 +133,20 @@
                 </div>
 
                 <form role="form">
+                  <!-- Regarding validation, I'm not sure if this is a trick bonus question or not,
+                  but validation should be completed via server side tests.
+                  The first reason is that users may disable javascript in their browsers.
+                  The second reason is to validate both username and email (as this input can take either)
+                  in the same validation such that the  server checks for the existence of each one after the other.
+                  When I validate on Ruby on Rails I do both a html5 validation
+                  (so as not to engage the server if it can be avoided) and a server side validation.
+                  Here is the typical HTML5 method. -->
                   <input class="sign-in-input" type="email" required placeholder="Email or username"></input>
                   <input class="sign-in-input" type="password" required placeholder="Password"></input>
                   <div class="form-group-submit">
                     <a href="#">Forgot your Sign In?</a>
                     <button class="submit-button-green" type="submit">Sign in</button>
                   </div>
-
                 </form>
 
               </div>
@@ -150,6 +157,9 @@
                   New in Vend
                   <img src="img/arrow-box.svg"/>
                 </span>
+                <div class="whats-new-carousel">
+
+                </div>
               </div>
             </div>
           </div>
@@ -161,6 +171,26 @@
     </section>
     </div>
 
+    <!-- Adds IE 8+ support for placeholder text in form -->
+    <script type="text/javascript">
+      // ref: http://diveintohtml5.org/detect.html
+      function supports_input_placeholder()
+      {
+        var i = document.createElement('input');
+        return 'placeholder' in i;
+      }
+
+      if(!supports_input_placeholder()) {
+        var fields = document.getElementsByTagName('INPUT');
+        for(var i=0; i < fields.length; i++) {
+          if(fields[i].hasAttribute('placeholder')) {
+            fields[i].defaultValue = fields[i].getAttribute('placeholder');
+            fields[i].onfocus = function() { if(this.value == this.defaultValue) this.value = ''; }
+            fields[i].onblur = function() { if(this.value == '') this.value = this.defaultValue; }
+          }
+        }
+      }
+    </script>
     <!-- These scripts check to see
     if jQuery can be loaded asynchronously.
     If the google CDN fails it loads the
@@ -169,6 +199,7 @@
     it to help get my job done faster. -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <!-- custom JS file -->
     <script src="js/main.js"></script>
   </body>
 </html>

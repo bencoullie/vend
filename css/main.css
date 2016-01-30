@@ -267,10 +267,9 @@ or not. The current log in box is n */
 .sign-in-subheader-text {
   font-size: 16px;
   text-transform: uppercase;
-  padding-bottom: 20px;
 }
 
-.carousel-container img {
+.sign-in-subheader-text img {
   width: 13px;
   margin-top: -2px;
   margin-left: 2px;
@@ -397,6 +396,11 @@ or not. The current log in box is n */
   -moz-transition-duration: .2s;
   -o-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+/* carousel styling */
+.whats-new-carousel {
+  margin-top: 20px;
 }
 
 /* ==========================================================================
