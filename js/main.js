@@ -1,4 +1,4 @@
-"use strict"; // for ECMA6 (#feelsgoodman)
+"use strict"; // for ECMA6 (#thefutureisnow)
 
 $(function(){
   // Simple header phone icon functionality
