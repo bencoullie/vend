@@ -317,6 +317,10 @@ or not. The current log in box is n */
   float: right;
 }
 
+.form-container form {
+  margin-top: 20px;
+}
+
 .form-store-info div:last-child a {
   color: #989898;
   text-decoration: none;
@@ -400,7 +404,42 @@ or not. The current log in box is n */
 
 /* carousel styling */
 .whats-new-carousel {
+  margin-top: 38px;
+}
+
+.whats-new-carousel img {
+  width: 100%;
+}
+
+.whats-new-carousel li img {
+  padding-bottom: 20px;
+}
+
+.whats-new-carousel .unslider-nav {
   margin-top: 20px;
+}
+
+.whats-new-carousel .unslider-nav ol li  {
+  width: 10px;
+  height: 10px;
+  margin: 0 4px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  background-color: #626262;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
+}
+
+.whats-new-carousel .unslider-nav ol li.unslider-active {
+  background-color: #989898;
+  -webkit-transition-duration: .2s;
+  -moz-transition-duration: .2s;
+  -o-transition-duration: .2s;
+  transition-duration: .2s;
 }
 
 /* ==========================================================================
