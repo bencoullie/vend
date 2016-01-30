@@ -3,24 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>POS Software - Best Retail Point of Sale Systems | Vend</title>
+    <title>POS Software - Best Retail Point of Sale Systems | Vend Sign In</title>
     <meta name="description" content="Vend’s point of sale system, inventory management, and iPad POS software is used by thousands of retailers worldwide. Try our POS system free today.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- As Proxima Nova is a paid font
-    which I don't yet have access to
-    I tried opting for it's closest free alternative
-    in my oppinion: Montserrat. But this didn't
-    have enough font weights so I went for Lato.
+    <!-- As Proxima Nova is a paid font which I don't yet have access to
+    I tried opting for Montserrat (a close free alternative).
+    But alas this didn't have enough font weights so I went for Lato.
     Not nearly as pretty but it get's the job done -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Industry standard normalizer -->
     <link rel="stylesheet" href="css/normalize.min.css">
+
+    <!-- Modernizr polyfills -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <!-- Unslider stylesheets -->
     <link rel="stylesheet" href="css/unslider.css">
     <link rel="stylesheet" href="css/unslider-dots.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/ico" href="favicon.ico">
-
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
   </head>
   <body>
 
@@ -37,12 +42,12 @@
           <li><a rel="nofollow" href="http://blog.vendhq.com">Blog</a></li>
           <!-- There's no title for this or any icon
           on the vendhq header. I think it's pretty
-          important for explaining the icon -->
+          important for explaining the icon so I added it -->
           <li><a href="http://www.vendhq.com/contact" title="Contact">
             <!-- As I want my svg to be interactive
             (i.e. be hightlightable on hover like text)
             and as vendhq uses inline svg
-            I've opted for inline over <img> -->
+            I've opted for inline over <img> svgs -->
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 12" enable-background="new 0 0 14 12" xml:space="preserve">
               <g>
                 <path fill="#DFDFDF" d="M14,7V3c0,0,0-3-3-3H3c0,0-3,0-3,3v4c0,0,0,3,3,3h3l5,2l-1-2h1C11,10,14,10,14,7"/>
@@ -115,11 +120,19 @@
       </div>
     </header>
 
-    <!-- PRIMARY COLUMN -->
+    <!-- PRIMARY COLUMN/CONTENT -->
     <div id="main">
       <section class="as-table">
         <div class="as-table-cell">
           <div class="sign-in-container clearfix">
+            <!-- FORM DIV -->
+            <!-- Form first in the HTML/DOM (despite being second in desktop design)
+            as this doesn't affect the desktop version
+            (the divs still fall correctly due to css/floats)
+            but when it comes to mobile screen sizes,
+            seeing as you want the login beofre the slider for mobile,
+            it's easier and more code efficient to just kill the floats
+            for mobile and let the divs fall as they may :) -->
             <div class="form-container">
               <div class="center">
                 <div class="sign-in-header-box">
@@ -134,26 +147,25 @@
                     <a href="#">Not your store?</a>
                   </div>
                 </div>
-
                 <form role="form">
                   <!-- Regarding validation, I'm not sure if this is a trick bonus question or not,
                   but validation should be completed via server side tests.
                   The first reason is that users may disable javascript in their browsers.
-                  The second reason is to validate both username and email (as this input can take either)
-                  in the same validation such that the  server checks for the existence of each one after the other.
+                  The second reason is so you can validate both username and email (as this input can take either)
+                  in the same validation query such that the server checks for the existence of, say, email THEN username.
                   When I validate on Ruby on Rails I do both a html5 validation
                   (so as not to engage the server if it can be avoided) and a server side validation.
                   Here is the typical HTML5 method. -->
-                  <input class="sign-in-input" type="email" required placeholder="Email or username"></input>
+                  <input class="sign-in-input" type="email" required placeholder="Email or Username"></input>
                   <input class="sign-in-input" type="password" required placeholder="Password"></input>
                   <div class="form-group-submit">
                     <a href="#">Forgot your Sign In?</a>
                     <button class="submit-button-green" type="submit">Sign in</button>
                   </div>
                 </form>
-
               </div>
             </div>
+            <!-- SLIDER DIV -->
             <div class="carousel-container">
               <div class="center">
                 <span class="sign-in-subheader-text">
@@ -168,7 +180,7 @@
                           <img src="img/cash-management.jpg" alt="Cash management" title="Cash management">
                         </a>
                         <div class="sign-in-slider-description">
-                          <!-- Descriptions taken from Vend blog headings and current Vend pages -->
+                          <!-- Descriptions/links from Vend blog headings and current Vend pages -->
                           <span>Take control of your register with new cash management</span>
                         </div>
                       </li>
@@ -210,7 +222,7 @@
     </section>
     </div>
 
-    <!-- Adds IE 8+ support for placeholder text in form -->
+    <!-- Adds pretty important IE 8+ support for placeholder text in the form -->
     <script type="text/javascript">
       // ref: http://diveintohtml5.org/detect.html
       function supports_input_placeholder()
@@ -243,7 +255,7 @@
     <script src="//stephband.info/jquery.event.swipe/js/jquery.event.swipe.js"></script>
     <!-- unSlider -->
     <script src="js/vendor/unslider.js"></script>
-    <!-- custom JS file -->
+    <!-- custom JS -->
     <script src="js/main.js"></script>
   </body>
 </html>

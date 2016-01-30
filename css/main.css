@@ -79,6 +79,8 @@ body {
 
 /* Header styling */
 #main, header {
+  /* Choose grey gutters version of design or not
+  by un-commenting or commenting the max-width */
   /*max-width: 1440px;*/
   margin: 0 auto;
 }
@@ -93,8 +95,8 @@ to reduce class bloat and keep things
 relatively unspecific for maintainability.
 <header> not used as parent as you can have
 several <header> elements in one document...
-I can try better defend decisions like these
-if you have any questions, so shoot :)*/
+I can try better explain decisions like these
+if you have any questions, so shoot :) */
 .inner-header {
   max-width: 1022px;
   max-width: 63.87rem;
@@ -130,7 +132,7 @@ if you have any questions, so shoot :)*/
   text-decoration: none;
   /* Normally I'd be using scss
   and mixins to do this for me so
-  it would be less cluttered */
+  it would all be less cluttered */
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
@@ -177,8 +179,8 @@ for readability and brevity) */
 /* I like Vend's current approach of seperating
 classes based on either CSS styling (below)
 or javascript selection (.js-phone-number).
-.js-phone-number will only be used for JS selection.
-*/
+for exmpl: .js-phone-number will be used for JS selection only.
+.phone-number will be used for css only */
 .inner-header .phone-number svg {
   margin-right: 5px;
   display: inline-block;
@@ -201,13 +203,16 @@ or javascript selection (.js-phone-number).
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /*on the fly calculation ensures correct proportions constantly*/
+  /* On the fly calculation ensures correct proportions constantly.
+  100% of current viewport height minus the 30px header */
   height: calc(100vh - 30px);
 }
 
 /* It was difficult to tell from the image
-If you wanted a vertically centered login box
-or not. The current log in box is n */
+If you wanted a vertically centered login box or not.
+The current log in box is vertical so I went with that
+I also think it makes more sense. A relatively easy fix
+if you'd like it changed to non-vertically centered.*/
 .as-table {
   width: 100%;
   height: 100%;
@@ -228,12 +233,19 @@ or not. The current log in box is n */
 .sign-in-container {
   color: #404040;
   margin: 0 auto;
-  /* I tried my best
-  to get pixel perfect
-  measurements for desktop
-  from the provided image */
+  /* Pixel perfect :) */
   width: 840px;
   height: 418px;
+
+  /* not sure how much creative license I'd be given
+  with designs and what not but this is an example of
+  something groundbreaking! I'd noramlly like to add in these
+  situtations (based on Google's material design guidlines)
+  It just helps the form pop more. Ofc I'd make suggestions.
+  rather than jsut write in my oppinioned css if that'd be preferred*/
+  -webkit-box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
+  -moz-box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
+  box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
 }
 
 .sign-in-container .center {
@@ -279,7 +291,8 @@ or not. The current log in box is n */
   margin: 23px;
   text-align: center;
   color: #fff;
-  /* Enhanced readability against image backdrops */
+  /* Enhanced readability against image backdrops.
+  Another personal preference addition */
   text-shadow: 2px 2px 2px rgba(30, 30, 30, 0.35);
 }
 
@@ -345,28 +358,25 @@ or not. The current log in box is n */
   margin-bottom: 10px;
   line-height: 45px;
   padding-left: 15px;
+  font-size: 18px;
 }
 
-/* normally I'd use a scss mixin for this */
+/* I miss SCSS mixins already */
 .sign-in-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #d2d2d2;
   font-size: 18px;
-  font-weight: 300;
 }
 .sign-in-input::-moz-placeholder { /* Firefox 19+ */
   color: #d2d2d2;
   font-size: 18px;
-  font-weight: 300;
 }
 .sign-in-input:-ms-input-placeholder { /* IE 10+ */
   color: #d2d2d2;
   font-size: 18px;
-  font-weight: 300;
 }
 .sign-in-input:-moz-placeholder { /* Firefox 18- */
   color: #d2d2d2;
   font-size: 18px;
-  font-weight: 300;
 }
 
 .form-group-submit {
@@ -392,6 +402,7 @@ or not. The current log in box is n */
   -moz-transition-duration: .2s;
   -o-transition-duration: .2s;
   transition-duration: .2s;
+  text-transform: uppercase;
 }
 
 .submit-button-green:hover {
