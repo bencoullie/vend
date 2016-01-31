@@ -123,8 +123,8 @@
     <!-- PRIMARY COLUMN/CONTENT -->
     <div id="main">
       <section class="as-table">
-        <div class="as-table-cell">
-          <div class="sign-in-container">
+        <div class="as-table-cell clearfix">
+          <div class="sign-in-container clearfix">
             <!-- FORM DIV -->
             <!-- Form first in the HTML/DOM (despite being second in desktop design)
             as this doesn't affect the desktop version
@@ -142,9 +142,12 @@
                   </h1>
                 </div>
                 <div class="form-store-info clearfix">
-                  <div class="sign-in-subheader-text">Indie Home Collective</div>
+                  <div class="sign-in-subheader-text">
+                    Indie Home Collective
+                  </div>
                   <div>
-                    <a href="#">Not your store?</a>
+                    <a href="#" class="form-store-info-desktop">Not your store?</a>
+                    <a href="#" class="form-store-info-mobile">✕</a>
                   </div>
                 </div>
                 <form role="form">
@@ -158,12 +161,12 @@
                   Here is the typical HTML5 method. -->
                   <input class="sign-in-input" type="email" required placeholder="Email or Username"></input>
                   <input class="sign-in-input" type="password" required placeholder="Password"></input>
-                  <div class="form-group-submit">
-                    <div>
-                      <a href="https://support.vendhq.com/hc/en-us/articles/201379510-Help-I-ve-forgotten-my-password">Forgot your Sign In?</a>
-                    </div>
+                  <div class="form-group-submit clearfix">
                     <div>
                       <button class="submit-button-green" type="submit">Sign in</button>
+                    </div>
+                    <div>
+                      <a href="https://support.vendhq.com/hc/en-us/articles/201379510-Help-I-ve-forgotten-my-password">Forgot your Sign In?</a>
                     </div>
                   </div>
                 </form>
@@ -172,9 +175,21 @@
             <!-- SLIDER DIV -->
             <div class="carousel-container">
               <div class="center clearfix">
-                <span class="sign-in-subheader-text">
+                <a href="https://blog.vendhq.com/post/category/whats-new" class="sign-in-subheader-text">a
                   New in Vend
-                  <img src="img/arrow-box.svg"/>
+                  <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                    <title>External-icon</title>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                      <g id="external-icon" sketch:type="MSLayerGroup" fill="#d2d2d2">
+                        <g id="Page-1" sketch:type="MSShapeGroup">
+                          <g id="Shape">
+                            <path d="M8.33333333,8.33333333 L1.66666667,8.33333333 L1.66666667,1.69148437 L3.33333333,1.66666667 L3.33333333,0 L0,0 L0,10 L10,10 L10,5.83333333 L8.33333333,5.83333333 L8.33333333,8.33333333 L8.33333333,8.33333333 Z" id="Path"></path>
+                            <path d="M5,0 L6.66666667,1.66666667 L4.16666667,4.16666667 L5.83333333,5.83333333 L8.33333333,3.33333333 L10,5 L10,0 L5,0 L5,0 Z" id="Path"></path>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
                 </span>
                 <div class="whats-new-carousel">
                   <div class="my-slider">
