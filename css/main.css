@@ -299,6 +299,12 @@ to animate onto the page on background image load */
 .sign-in-subheader-text {
   font-size: 16px;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.carousel-container .sign-in-subheader-text {
+  font-size: 16px;
+  text-transform: uppercase;
   color: #d2d2d2;
   text-decoration: none;
   -webkit-transition-duration: .2s;
@@ -311,7 +317,7 @@ to animate onto the page on background image load */
   fill: #d2d2d2;
 }
 
-.sign-in-subheader-text:hover, .sign-in-subheader-text:hover svg * {
+.carousel-container .sign-in-subheader-text:hover, .sign-in-subheader-text:hover svg * {
   color: #fff;
   fill: #fff;
   -webkit-transition-duration: .2s;
