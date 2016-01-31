@@ -248,6 +248,8 @@ if you'd like it changed to non-vertically centered.*/
 /* The primary parent div for this section.
 Used as a means of specificity to avoid clashes
 on classes I feel might already be in use*/
+/* Personally, I'd like this primary sign in box
+to animate onto the page on background image load */
 .sign-in-container {
   color: #404040;
   margin: 0 auto;
