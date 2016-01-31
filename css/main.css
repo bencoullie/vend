@@ -604,6 +604,10 @@ rather than predetermined mobile screen sizes */
     padding: 50px 20px;
   }
 
+  .sign-in-container .form-container, .sign-in-container .carousel-container {
+    border-radius: 0;
+  }
+
   .sign-in-container .form-container {
     height: 465px;
   }
