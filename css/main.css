@@ -368,7 +368,7 @@ to animate onto the page on background image load */
   font-size: 35px;
 }
 
-/* Required notification not present in design */
+/* Required asterix not present in design */
 .sign-in-container abbr[title="required"] {
   display: none;
 }
