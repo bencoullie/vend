@@ -48,6 +48,21 @@ textarea {
 
 /* ==========================================================================
    Custom styles (non boilerplate)
+
+   A quick note on class names and specificity:
+   It looks like Vend is using BEM or something similar.
+   I know of and want to learn BEM but have never given it a go (as such I won't be using it here).
+   Instead I wrote class names and structured specificity as if this login page
+   would actually be connecting to a main site (the nameing conventions of which
+   I'm not sure as of yet). So to avoid possible conflicts or breaking other styles,
+   I've opted to nest most classes which I feel could clash within a parent div.
+   This essentially makes it more like a standalone plugin than an extension of the site's styling conventions.
+   If I were making this mockup with no particular site in mind I wouldn't write css like this.
+   Moreover, if this were actually for Vend I would adopt the sites global styling
+   and not write my own or use BP5 (html/body styling etc) - this might've changed my code a fair bit.
+
+   All CSS kept in a single file for the sake of easy review. Usually I'd seperate it into multiple files
+   based on whatever file structure/system is currently in use for the website (vendhq in this case).
    ========================================================================== */
 
 /* Site-wide styling */
@@ -210,7 +225,7 @@ for exmpl: .js-phone-number will be used for JS selection only.
 
 /* It was difficult to tell from the image
 If you wanted a vertically centered login box or not.
-The current log in box is vertical so I went with that
+The current log in box is vertical so I went with that.
 I also think it makes more sense. A relatively easy fix
 if you'd like it changed to non-vertically centered.*/
 .as-table {
@@ -230,6 +245,9 @@ if you'd like it changed to non-vertically centered.*/
 }
 
 /* Sign in box styling */
+/* The primary parent div for this section.
+Used as a means of specificity to avoid clashes
+on classes I feel might already be in use*/
 .sign-in-container {
   color: #404040;
   margin: 0 auto;
@@ -241,8 +259,8 @@ if you'd like it changed to non-vertically centered.*/
   with designs and what not but this is an example of
   something groundbreaking! I'd noramlly like to add in these
   situtations (based on Google's material design guidlines)
-  It just helps the form pop more. Ofc I'd make suggestions.
-  rather than jsut write in my oppinioned css if that'd be preferred*/
+  It just helps the form pop more. Ofc I'd make suggestions
+  rather than just write in my oppinioned css if that'd be preferred*/
   -webkit-box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
   -moz-box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
   box-shadow: 0px 4px 19px -8px rgba(0,0,0,0.60);
@@ -268,11 +286,11 @@ if you'd like it changed to non-vertically centered.*/
   float: right;
 }
 
-.form-container {
+.sign-in-container .form-container {
   border-radius: 0 3px 3px 0;
 }
 
-.carousel-container {
+.sign-in-container .carousel-container {
   border-radius: 3px 0 0 3px;
 }
 
@@ -285,6 +303,10 @@ if you'd like it changed to non-vertically centered.*/
   -moz-transition-duration: .2s;
   -o-transition-duration: .2s;
   transition-duration: .2s;
+}
+
+.sign-in-subheader-text svg * {
+  fill: #d2d2d2;
 }
 
 .sign-in-subheader-text:hover, .sign-in-subheader-text:hover svg * {
@@ -338,19 +360,19 @@ if you'd like it changed to non-vertically centered.*/
   font-size: 35px;
 }
 
-.form-store-info div:first-child {
+.sign-in-container .form-store-info div:first-child {
   float: left;
 }
 
-.form-store-info div:last-child {
+.sign-in-container .form-store-info div:last-child {
   float: right;
 }
 
-.form-container form {
+.sign-in-container .form-container form {
   margin-top: 20px;
 }
 
-.form-store-info div:last-child a {
+.sign-in-container .form-store-info div:last-child a {
   color: #989898;
   text-decoration: none;
   -webkit-transition-duration: .2s;
@@ -359,7 +381,7 @@ if you'd like it changed to non-vertically centered.*/
   transition-duration: .2s;
 }
 
-.form-store-info div:last-child a:hover {
+.sign-in-container .form-store-info div:last-child a:hover {
   color: #797979;
   -webkit-transition-duration: .2s;
   -moz-transition-duration: .2s;
@@ -367,7 +389,7 @@ if you'd like it changed to non-vertically centered.*/
   transition-duration: .2s;
 }
 
-.sign-in-input {
+.sign-in-container .sign-in-input {
   display: block;
   width: 100%;
   border: 1px solid #d2d2d2;
@@ -378,41 +400,45 @@ if you'd like it changed to non-vertically centered.*/
 }
 
 /* I miss SCSS mixins already */
-.sign-in-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.sign-in-container .sign-in-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #d2d2d2;
   font-size: 18px;
 }
-.sign-in-input::-moz-placeholder { /* Firefox 19+ */
+.sign-in-container .sign-in-input::-moz-placeholder { /* Firefox 19+ */
   color: #d2d2d2;
   font-size: 18px;
 }
-.sign-in-input:-ms-input-placeholder { /* IE 10+ */
+.sign-in-container .sign-in-input:-ms-input-placeholder { /* IE 10+ */
   color: #d2d2d2;
   font-size: 18px;
 }
-.sign-in-input:-moz-placeholder { /* Firefox 18- */
+.sign-in-container .sign-in-input:-moz-placeholder { /* Firefox 18- */
   color: #d2d2d2;
   font-size: 18px;
 }
 
-.form-group-submit {
+.sign-in-container .form-group-submit {
   padding-top: 10px;
 }
 
-.form-group-submit a {
+.sign-in-container .form-group-submit a {
   color: #008cc5;
   text-decoration: none;
   line-height: 45px;
 }
 
-.form-group-submit div:first-child {
+.sign-in-container .form-group-submit div:first-child {
   float: right;
 }
 
-.form-group-submit div:last-child {
+.sign-in-container .form-group-submit div:last-child {
   float: left;
 }
 
+/* As this generic button might
+be used elsewhere in the future
+I havent made it specific
+to the login page */
 .submit-button-green {
   width: 245px;
   height: 45px;
@@ -569,23 +595,23 @@ rather than predetermined mobile screen sizes */
     height: 465px;
   }
 
-  .form-store-info-desktop {
+  .sign-in-container .form-store-info-desktop {
     display: none;
   }
 
-  .form-store-info div:last-child a {
+  .sign-in-container .form-store-info div:last-child a {
     color: #d2d2d2;
   }
 
-  .form-group-submit div:first-child {
+  .sign-in-container .form-group-submit div:first-child {
     float: none;
   }
 
- .form-group-submit .submit-button-green {
+ .sign-in-container .form-group-submit .submit-button-green {
    width: 100%;
  }
 
-  .form-group-submit div:last-child {
+  .sign-in-container .form-group-submit div:last-child {
     float: none;
     text-align: center;
   }
@@ -622,26 +648,26 @@ rather than predetermined mobile screen sizes */
     font-size: 15px;
   }
 
-  .sign-in-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  .sign-in-container .sign-in-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #d2d2d2;
     font-size: 16px;
   }
-  .sign-in-input::-moz-placeholder { /* Firefox 19+ */
+  .sign-in-container .sign-in-input::-moz-placeholder { /* Firefox 19+ */
     color: #d2d2d2;
     font-size: 16px;
   }
-  .sign-in-input:-ms-input-placeholder { /* IE 10+ */
+  .sign-in-container .sign-in-input:-ms-input-placeholder { /* IE 10+ */
     color: #d2d2d2;
     font-size: 16px;
   }
-  .sign-in-input:-moz-placeholder { /* Firefox 18- */
+  .sign-in-container .sign-in-input:-moz-placeholder { /* Firefox 18- */
     color: #d2d2d2;
     font-size: 16px;
   }
 }
 
 @media (min-width: 501px) {
-  .form-store-info-mobile {
+  .sign-in-container .form-store-info-mobile {
     display: none;
   }
 }

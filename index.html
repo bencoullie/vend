@@ -1,31 +1,26 @@
 <!doctype html>
 <html class="no-js" lang="">
   <head>
+    <!-- Best practices settings, Vend meta info and Vend favicon -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>POS Software - Best Retail Point of Sale Systems | Vend Sign In</title>
     <meta name="description" content="Vend’s point of sale system, inventory management, and iPad POS software is used by thousands of retailers worldwide. Try our POS system free today.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <!-- As Proxima Nova is a paid font which I don't yet have access to
     I tried opting for Montserrat (a close free alternative).
     But alas this didn't have enough font weights so I went for Lato.
-    Not nearly as pretty but it get's the job done -->
+    Not quite as pretty but it get's the job done -->
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-
-    <!-- Industry standard normalizer -->
-    <link rel="stylesheet" href="css/normalize.min.css">
-
-    <!-- Modernizr polyfills -->
+    <!-- Modernizr polyfills (minified) -->
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
-
-    <!-- Unslider stylesheets -->
-    <link rel="stylesheet" href="css/unslider.css">
-    <link rel="stylesheet" href="css/unslider-dots.css">
-
+    <!-- Industry standard normalizer (minified) -->
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <!-- Unslider stylesheet (minified) -->
+    <link rel="stylesheet" href="css/unslider.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
-    <link rel="icon" type="image/ico" href="favicon.ico">
   </head>
   <body>
 
@@ -41,8 +36,8 @@
           <li><a rel="nofollow" href="https://www.vendhq.com/university">Vend U</a></li>
           <li><a rel="nofollow" href="http://blog.vendhq.com">Blog</a></li>
           <!-- There's no title for this or any icon
-          on the vendhq header. I think it's pretty
-          important for explaining the icon so I added it -->
+          on the vendhq header. I think it's pretty important
+          for explaining the link's function so I added it -->
           <li><a href="http://www.vendhq.com/contact" title="Contact">
             <!-- As I want my svg to be interactive
             (i.e. be hightlightable on hover like text)
@@ -126,13 +121,9 @@
         <div class="as-table-cell clearfix">
           <div class="sign-in-container clearfix">
             <!-- FORM DIV -->
-            <!-- Form first in the HTML/DOM (despite being second in desktop design)
-            as this doesn't affect the desktop version
-            (the divs still fall correctly due to css/floats)
-            but when it comes to mobile screen sizes,
-            seeing as you want the login beofre the slider for mobile,
-            it's easier and more code efficient to just kill the floats
-            for mobile and let the divs fall as they may :) -->
+            <!-- Form portion of login written first in the HTML/DOM,
+            instead of second as indicated in the design/vissualy on desktop,
+            means a more efficient slip into place on mobile (just remove floats) -->
             <div class="form-container">
               <div class="center">
                 <div class="sign-in-header-box">
@@ -152,11 +143,11 @@
                 </div>
                 <form role="form">
                   <!-- Regarding validation, I'm not sure if this is a trick bonus question or not,
-                  but validation should be completed via server side tests.
+                  but validation should primarily be completed via server side tests.
                   The first reason is that users may disable javascript in their browsers.
                   The second reason is so you can validate both username and email (as this input can take either)
                   in the same validation query such that the server checks for the existence of, say, email THEN username.
-                  When I validate on Ruby on Rails I do both a html5 validation
+                  When I validate on Ruby on Rails projects I tend to do both a html5 validation
                   (so as not to engage the server if it can be avoided) and a server side validation.
                   Here is the typical HTML5 method. -->
                   <input class="sign-in-input" type="email" required placeholder="Email or Username"></input>
@@ -172,7 +163,7 @@
                 </form>
               </div>
             </div>
-            <!-- SLIDER DIV -->
+            <!-- CAROUSEL DIV -->
             <div class="carousel-container">
               <div class="center clearfix">
                 <a href="https://blog.vendhq.com/post/category/whats-new" class="sign-in-subheader-text">a
@@ -269,9 +260,11 @@
     it to help get my job done faster. -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <!-- unSlider -->
+    <!-- unSlider (unminified as key settings, such as slide timings, might need to be changed) -->
     <script src="js/vendor/unslider.js"></script>
     <!-- custom JS -->
     <script src="js/main.js"></script>
   </body>
 </html>
+
+<!-- PS: All JS/CSS would normally be minified for production (I would do this via Gulp or Rails) -->
